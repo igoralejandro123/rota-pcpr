@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d2538">
+  <meta name="description" content="Cronograma local de 80 dias para a PCPR, com cada aula do Gran organizada individualmente.">
+  <title>Rota PCPR — aulas do Gran em 80 dias</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <span class="eyebrow">PLANO DE APROVAÇÃO</span>
+      <h1>Rota PCPR</h1>
+      <p>80 dias, cada aula do Gran separada e revisão pelo Anki.</p>
+    </div>
+    <button id="theme" class="icon" title="Alternar tema" aria-label="Alternar tema">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span id="dayBadge" class="badge">DIA 1 DE 80</span>
+        <h2 id="headline">Sua próxima aula começa aqui.</h2>
+        <p id="subline">Marque cada aula concluída. O restante é redistribuído sem perder conteúdo.</p>
+      </div>
+      <div class="ring" id="ring" aria-label="Progresso geral">
+        <strong id="pct">0%</strong>
+        <span>concluído</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Resumo do progresso">
+      <article><span>Aulas estudadas</span><strong id="doneCount">0 / 1420</strong></article>
+      <article><span>Dias completos</span><strong id="daysDone">0 / 80</strong></article>
+      <article><span>Previsão de término</span><strong id="forecast">Dia 79</strong></article>
+      <article><span>Aulas pendentes</span><strong id="pending">1420</strong></article>
+    </section>
+
+    <div id="riskBanner" class="risk-banner" hidden></div>
+
+    <nav class="tabs" aria-label="Seções">
+      <button data-tab="today" class="active">Dia atual</button>
+      <button data-tab="plan">Plano de 80 dias</button>
+      <button data-tab="subjects">Matérias</button>
+      <button data-tab="settings">Ajustes</button>
+    </nav>
+
+    <section id="today" class="panel active"></section>
+    <section id="plan" class="panel"></section>
+    <section id="subjects" class="panel"></section>
+    <section id="settings" class="panel"></section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+</body>
+</html>
